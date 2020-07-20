@@ -10,8 +10,8 @@ import time
 log_path = f'logs/cats-vs-dogs-cnn-64x2-{int(time.time())}'
 tensorboard = TensorBoard(log_dir=log_path, histogram_freq=1)
 
-X = np.load('features.npy')
-y = np.load('labels.npy')
+X = np.load('features-70px.npy')
+y = np.load('labels-70px.npy')
 
 #Example image
 #print(y[515])
@@ -47,6 +47,6 @@ model.compile(loss="binary_crossentropy",
              metrics=['accuracy'])
 
 #Train model
-model.fit(X, y, batch_size=12, epochs=10, validation_split=0.1, callbacks=[tensorboard])
+model.fit(X, y, batch_size=32, epochs=10, validation_split=0.1, callbacks=[tensorboard])
 
-model.save('64x3-CNN.model')
+model.save('64x3-CNN-70px.model')
