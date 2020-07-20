@@ -31,6 +31,10 @@ model.add(Conv2D(64, (3,3)))
 model.add(Activation("relu"))
 model.add(MaxPooling2D(pool_size=(2,2)))
 
+model.add(Conv2D(64, (3,3)))
+model.add(Activation("relu"))
+model.add(MaxPooling2D(pool_size=(2,2)))
+
 model.add(Flatten())
 #model.add(Dense(64))
 #model.add(Activation("relu"))
@@ -43,4 +47,6 @@ model.compile(loss="binary_crossentropy",
              metrics=['accuracy'])
 
 #Train model
-model.fit(X, y, batch_size=12, epochs=3, validation_split=0.1, callbacks=[tensorboard])
+model.fit(X, y, batch_size=12, epochs=10, validation_split=0.1, callbacks=[tensorboard])
+
+model.save('64x3-CNN.model')
