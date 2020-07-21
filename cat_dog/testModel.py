@@ -15,9 +15,11 @@ def prepare(filePath):
 
     return new_array.reshape(-1, IMG_SIZE, IMG_SIZE, 1)
 
-model = tf.keras.models.load_model("64x3-CNN-70px.model")
+def load_model():
+    model = tf.keras.models.load_model("64x3-CNN-70px.model")
+    return model
 
+#model = load_model()
+#prediction = model.predict([prepare('data/rusty.jpg')])
 
-prediction = model.predict([prepare('data/rusty.jpg')])
-
-print(CATEGORIES[int(prediction[0][0])])
+#print(CATEGORIES[int(prediction[0][0])])
