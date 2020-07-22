@@ -15,40 +15,26 @@
     
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
                 </ul>
             </div>
         </nav>
         <div class="main-content">
             <h1>Upload an image</h1>
 
-            <div class="input-group mb-3">
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="inputGroupFile02">
-                  <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
-                </div>
-              </div>
-            </div>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" name="image" id="image">
+                      <label class="custom-file-label" for="image">Select image...</label>
+                    </div>
+                  </div>
+          
+                  <button type="submit" class="btn btn-primary">Classify!</button>          
+
+            </form>
+            <h1>{{ predict }}</h1>
+
+            <!-- <img src="{{ pet_image }}" alt="Pet Image"> -->
         </div>
 
         
