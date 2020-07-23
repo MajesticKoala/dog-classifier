@@ -10,8 +10,8 @@ def prepare(filePath):
     
     new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))
 
-    plt.imshow(new_array, cmap='gray')
-    plt.show()
+    #plt.imshow(new_array, cmap='gray')
+    #plt.show()
 
     return new_array.reshape(-1, IMG_SIZE, IMG_SIZE, 1)
 
