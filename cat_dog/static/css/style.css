@@ -1,5 +1,5 @@
 .main-content {
-    margin-top: 50px;
+    margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
     width: 500px;
@@ -9,5 +9,12 @@
 
 h1 {
     font-family: 'Courier New', Courier, monospace;
-    padding: 40px;
+    padding-top: 40px;
+}
+
+
+h4 {
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    padding-bottom: 20px;
 }
