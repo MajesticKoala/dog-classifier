@@ -5,7 +5,9 @@ from tensorflow.keras.callbacks import TensorBoard
 import numpy as np
 import matplotlib.pyplot as plt
 import time
+import pickle
 
+print(tf.__version__)
 #Set up TensorBoard
 log_path = f'logs/cats-vs-dogs-cnn-64x2-{int(time.time())}'
 tensorboard = TensorBoard(log_dir=log_path, histogram_freq=1)
@@ -49,4 +51,5 @@ model.compile(loss="binary_crossentropy",
 #Train model
 model.fit(X, y, batch_size=32, epochs=10, validation_split=0.1, callbacks=[tensorboard])
 
-model.save('64x3-CNN-70px.model')
+pickle.dump(model, open('64x3-CNN-70px.pkl', 'wb'))
+#model.save('64x3-CNN-70px.model')

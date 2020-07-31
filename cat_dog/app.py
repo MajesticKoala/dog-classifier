@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request, redirect, flash
-from testModel import load_model, prepare
+from testModel import prepare
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2, sys, os, shutil
 from PIL import Image
-import tensorflow as tf
+#import tensorflow as tf
+import pickle
 
 app = Flask(__name__)
 
@@ -18,7 +19,8 @@ def index():
 def predict(image_array):
     CATEGORIES = ['Dog 🐶', 'Cat 🐱']
 
-    model = tf.keras.models.load_model("64x3-CNN-70px.model")
+    model = pickle.load(open("64x3-CNN-70px.model", 'rb'))
+    #model = tf.keras.models.load_model("64x3-CNN-70px.model")
     prediction = model.predict([image_array])
     return CATEGORIES[int(prediction[0][0])]
 
