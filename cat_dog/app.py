@@ -19,6 +19,7 @@ def index():
 def predict(image_array):
     CATEGORIES = ['Dog 🐶', 'Cat 🐱']
 
+    #Run model prediction
     model = pickle.load(open("64x3-CNN-70px.model", 'rb'))
     #model = tf.keras.models.load_model("64x3-CNN-70px.model")
     prediction = model.predict([image_array])
