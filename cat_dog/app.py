@@ -26,6 +26,7 @@ def predict(image_array):
     return CATEGORIES[int(prediction[0][0])]
 
 def clear_directory():
+    #Clear image directory
     folder = 'images'
     for filename in os.listdir(folder):
         file_path = os.path.join(folder, filename)
